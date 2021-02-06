@@ -1,0 +1,115 @@
+html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    min-height: 100vh;
+}
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+*:not(code){
+    font-family: "Roboto";
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(to top right, rgb(101, 115, 255), rgb(122, 113, 244), rgb(143, 111, 233), rgb(165, 110, 221), rgb(186, 108, 210), rgb(207, 106, 199), rgb(188, 102, 204), rgb(168, 98, 209), rgb(149, 95, 215), rgb(129, 91, 220), rgb(110, 87, 225), rgb(90, 83, 230));
+}
+
+.glass:not(table){
+    background: rgb(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(3.0px);
+    -webkit-backdrop-filter: blur(3.0px);
+    border-radius: 10px;
+}
+table.glass code{
+    background: rgb(255, 255, 255, 0.1);
+    backdrop-filter: blur(3.0px);
+    -webkit-backdrop-filter: blur(3.0px);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 20px;
+    width: 100%;
+}
+#search{
+    margin-bottom: 20px;
+    padding: 5px;
+    border: none;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+table thead th {
+    padding-bottom: 5px;
+    
+}
+table tbody tr{
+    cursor: pointer;
+}
+
+table tbody tr:hover code{
+    transform: scale(1.01);
+    transition: transform 0.2s;
+    background: rgba(255,255,255,0.5);
+}
+  
+table tbody tr > th{
+    text-align: end;
+   
+    min-width: 160px;
+    max-width: 200px;
+}
+table tbody tr > td{
+    text-align: end;
+   
+    width: calc( 100%/2);
+}
+
+
+table code {
+    display: flex;
+    white-space: pre-wrap;
+    background: lightblue;
+    margin: 0 10px;
+    height: 100%;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+}
+
+td {
+    padding: 0px;
+    height: 0px;
+}
+
+tr:not(:first-child) code{
+    border-top: 1px solid rgba(255,255,255,0.5);
+}
+
+tr:first-child code {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+tr:last-child code {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
