@@ -1,20 +1,40 @@
 let rootURL = window.location.href;
-let languages = {
-    "python": true,
-    "javascript": true,
-    "c-sharp": false,
-    "ruby": false
-}
-let activeLangs = () => Object.entries(languages).filter(entry => entry[1]==true).map(entry => entry[0])
+let languages = [
+    {
+        name: "python",
+        displayName: "Python",
+        isActive: true
+    },
+    {
+        name: "javascript",
+        displayName: "JavaScript",
+        isActive: true
+    },
+    {
+        name: "csharp",
+        displayName: "C#",
+        isActive: false
+    },
+    {
+        name: "ruby",
+        displayName: "Ruby",
+        isActive: false
+    }
+]
+let activeLangs = () => languages.filter(lang => lang.isActive).map(lang => lang.name)
+let activeLangDisplayNames = () => languages.filter(lang => lang.isActive).map(lang => lang.displayName)
 
 let mergedData;
+function htmlEntityEncode(str){
+    return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
 
 function mergeData(data) {
     let meta = data[0];
     let langCode = data.slice(1);
 
     result = {
-        "headers": activeLangs(),
+        "headers": activeLangDisplayNames(),
         "rows": {}
     }
     let allKeys = new Set(langCode.map(e => Object.keys(e)).reduce((acc, arr) => [...acc, ...arr], []));
@@ -28,7 +48,7 @@ function mergeData(data) {
             try {
                 result.rows[key].push(e[key][0])
             } catch (error) {
-                result.rows[key].push(["N/A"])
+                result.rows[key].push([])
             }
         })
     })
@@ -51,8 +71,8 @@ function displayTableBody(data, included_ids = []) {
         }
         html.push(`<tr id=${key}>`);
         html.push(`<th>${data.rows[key][0]}</th>`);
-        data.rows[key].slice(1).forEach(codeText => {
-            html.push(`<td><code>${codeText.join("\n")}</td></code>`);
+        data.rows[key].slice(1).forEach((codeText, index) => {
+            html.push(`<td><code class="${activeLangs()[index]}">${htmlEntityEncode(codeText.join("\n"))}</td></code>`);
         })
         html.push(`</tr>`);
     })
@@ -66,10 +86,8 @@ function displayTableBody(data, included_ids = []) {
 
 function initLangs(){
     html = []
-    Object.entries(languages).forEach(entry => {
-        lang = entry[0];
-        isActive = entry[1];
-        html.push(`<div class="lang glass ${isActive? 'active': ''}">${lang}</div>`);
+    languages.forEach(lang => {
+        html.push(`<div id="${lang.name}" class="lang glass ${lang.isActive? 'active': ''}">${lang.displayName}</div>`);
     })
     document.querySelector('#lang-selector').innerHTML = html.join('');
 }
@@ -112,7 +130,8 @@ initComparison();
 
 document.querySelectorAll("#lang-selector .lang").forEach(element => {
     element.addEventListener('click', (e) => {
-        languages[e.target.textContent.toLowerCase()] ^= true; // XOR -> alternate value between true and false
+        let index = languages.findIndex(lang => lang.name==e.target.id);
+        languages[index].isActive ^= true; // XOR -> alternate value between true and false
         e.target.classList.toggle('active');
         initComparison();
     })
