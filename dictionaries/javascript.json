@@ -1,0 +1,15 @@
+{
+    "var-0": [
+        ["var x=42"],
+        ["let x=42"]
+    ],
+    "func-0": [
+        [
+            "function func(a, b):",
+            "    return a + b"
+        ]
+    ],
+   "func-1": [
+        ["func = (a, b) => a + b"]
+    ]
+}

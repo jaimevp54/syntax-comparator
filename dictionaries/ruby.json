@@ -1,0 +1,15 @@
+{
+    "var-0": [
+        ["x = 42"]
+    ],
+    "func-0": [
+        [
+            "def func(a, b)",
+            "    a + b",
+            "end"
+        ]
+    ],
+    "func-1": [
+        ["my_lambda = lambda { |a, b| a + b }"]
+    ]
+}

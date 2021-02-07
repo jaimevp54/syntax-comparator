@@ -1,0 +1,17 @@
+{
+    "var-0": {
+        "title": "Variable declaration"
+    },
+    "func-0": {
+        "title": "Function definition"
+    },
+    "func-1": {
+        "title": "Anonymous function"
+    },
+    "func-2": {
+        "title": "CC"
+    },
+    "comprehension-list-0": {
+        "title": "List comprehension"
+    }
+}

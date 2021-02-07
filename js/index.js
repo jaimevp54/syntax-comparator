@@ -1,8 +1,8 @@
-let root = window.location.href;
+let rootURL = window.location.href;
 let languages = {
     "python": true,
     "javascript": true,
-    "c#": false,
+    "c-sharp": false,
     "ruby": false
 }
 let activeLangs = () => Object.entries(languages).filter(entry => entry[1]==true).map(entry => entry[0])
@@ -57,7 +57,11 @@ function displayTableBody(data, included_ids = []) {
         html.push(`</tr>`);
     })
     html.push("</tbody>");
+
     document.querySelector('#main-table').innerHTML = html.join('');
+    document.querySelectorAll('code').forEach((block) => {
+        hljs.highlightBlock(block);
+    });
 }
 
 function initLangs(){
@@ -72,8 +76,8 @@ function initLangs(){
 
 function initComparison(){
     Promise.all([
-            ...[fetch('https://gist.githubusercontent.com/jaimevp54/b85ca213ce484b1dab56708c51a80f73/raw/4a0431405647aecf1fbc0637cb0d9b52b20b8a09/meta.json')],
-            ...activeLangs().map(lang => fetch(`https://gist.githubusercontent.com/jaimevp54/b85ca213ce484b1dab56708c51a80f73/raw/4a0431405647aecf1fbc0637cb0d9b52b20b8a09/${lang}.json`))
+            ...[fetch(`${rootURL}dictionaries/meta.json`)],
+            ...activeLangs().map(lang => fetch(`${rootURL}dictionaries/${lang}.json`))
     ])
         .then(responses => Promise.all(responses.map(response => response.json())))
         .then(mergeData)

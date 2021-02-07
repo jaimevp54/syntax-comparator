@@ -1,0 +1,21 @@
+{
+    "var-0": [
+        ["x = 42"]
+    ],
+    "func-0": [
+        [
+            "def func(a, b):",
+            "    return a + b"
+        ],
+        [
+            "def hola(a, b):",
+            "    return a**b"
+        ]
+    ],
+    "func-1": [
+        ["lambda a, b: a + b"]
+    ],
+    "comprehension-list-0": [
+        ["[letter for letter in \"Hello World\"]"]
+    ]
+}

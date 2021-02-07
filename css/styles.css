@@ -20,20 +20,21 @@ html {
 body {
     display: flex;
     justify-content: center;
-    background-image: linear-gradient(to top right, rgb(101, 115, 255), rgb(122, 113, 244), rgb(143, 111, 233), rgb(165, 110, 221), rgb(186, 108, 210), rgb(207, 106, 199), rgb(188, 102, 204), rgb(168, 98, 209), rgb(149, 95, 215), rgb(129, 91, 220), rgb(110, 87, 225), rgb(90, 83, 230));
+    background: linear-gradient( 125deg , #EF6668 0%, #EF6668 40%, #B2FCFF calc(40% + 1px), #b2fcff 60%, #5EDFFF calc(60% + 1px), #5EDFFF 72%, #3E64FF calc(72% + 1px), #3E64FF 100%);
+    color: #565656;
 }
 
 .glass:not(table){
-    background: rgb(255, 255, 255, 0.1);
+    background: rgb(255, 255, 255, 0.6);
     box-shadow: 0 8px 20px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(3.0px);
-    -webkit-backdrop-filter: blur(3.0px);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     border-radius: 10px;
 }
 table.glass code{
-    background: rgb(255, 255, 255, 0.1);
-    backdrop-filter: blur(3.0px);
-    -webkit-backdrop-filter: blur(3.0px);
+    background: rgb(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .content {
@@ -71,7 +72,8 @@ table.glass code{
 }
 
 #lang-selector .lang.active{
-    background: rgba(255,255,255,0.3);
+    background: rgba(255,255,255,1);
+    font-weight: bold;
 }
 
 #lang-selector .lang:hover{
@@ -111,21 +113,17 @@ table tbody tr{
 }
 
 table tbody tr:hover code {
-    transform: scale(1.01);
-    transition: transform 0.2s;
-    background: rgba(255,255,255,0.5);
+    background: rgba(255,255,255,0.8);
 }
   
 table tbody tr > th{
-    text-align: end;
-   
     min-width: 160px;
     max-width: 200px;
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
 }
 
-table tbody tr > td{
-    text-align: end;
-}
 
 
 table code {
@@ -144,7 +142,7 @@ td {
 }
 
 tr:not(:first-child) code{
-    border-top: 1px solid rgba(255,255,255,0.5);
+    border-top: 1px solid rgb(94 223 255 / 50%);
 }
 
 tr:first-child code {

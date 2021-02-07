@@ -1,0 +1,16 @@
+{
+    "var-0": [
+        ["int x = 42"]
+    ],
+    "func-0": [
+        [
+            "int func(int a, int b){",
+            "    return a + b",
+            "}"
+        ]
+    ],
+   "func-1": [
+        ["Func<int, int> func = (a, b) => a + b"]
+
+    ]
+}
