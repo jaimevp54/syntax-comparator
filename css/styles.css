@@ -25,7 +25,7 @@ body {
 
 .glass:not(table){
     background: rgb(255, 255, 255, 0.1);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    box-shadow: 0 8px 20px 0 rgba(31, 38, 135, 0.37);
     backdrop-filter: blur(3.0px);
     -webkit-backdrop-filter: blur(3.0px);
     border-radius: 10px;
@@ -37,18 +37,55 @@ table.glass code{
 }
 
 .content {
+    display: grid;
+    grid-template-rows: 2fr 8fr;
+    grid-gap: 20px;
+
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 20px;
+}
+
+.card{
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    max-width: 1200px;
-    margin: 20px;
-    width: 100%;
 }
+
+#lang-selector{
+    display: flex;
+    width: 100%;
+    max-width: 800px;
+    justify-content: space-between;
+}
+
+#lang-selector .lang{
+    padding: 5px 20px;
+    min-width: 120px;
+    text-align: center;
+    cursor: pointer;
+
+    text-transform: capitalize;
+}
+
+#lang-selector .lang.active{
+    background: rgba(255,255,255,0.3);
+}
+
+#lang-selector .lang:hover{
+    transform: scale(1.1);
+    transition: transform 0.2s;
+    background: rgba(255,255,255,0.5);
+}
+
 #search{
     margin-bottom: 20px;
     padding: 5px;
     border: none;
+    max-width: 400px;
+    width: 100%;
 }
 
 table{
@@ -57,15 +94,23 @@ table{
     border-spacing: 0;
 }
 
+table tr {
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: 170px repeat(auto-fit, minmax(0, 1fr) );
+}
+
 table thead th {
     padding-bottom: 5px;
-    
+    text-transform: capitalize;
 }
+
+
 table tbody tr{
     cursor: pointer;
 }
 
-table tbody tr:hover code{
+table tbody tr:hover code {
     transform: scale(1.01);
     transition: transform 0.2s;
     background: rgba(255,255,255,0.5);
@@ -77,10 +122,9 @@ table tbody tr > th{
     min-width: 160px;
     max-width: 200px;
 }
+
 table tbody tr > td{
     text-align: end;
-   
-    width: calc( 100%/2);
 }
 
 
@@ -97,7 +141,6 @@ table code {
 
 td {
     padding: 0px;
-    height: 0px;
 }
 
 tr:not(:first-child) code{

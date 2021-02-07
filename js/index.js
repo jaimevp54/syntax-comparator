@@ -1,3 +1,12 @@
+let root = window.location.href;
+let languages = {
+    "python": true,
+    "javascript": true,
+    "c#": false,
+    "ruby": false
+}
+let activeLangs = () => Object.entries(languages).filter(entry => entry[1]==true).map(entry => entry[0])
+
 let mergedData;
 
 function mergeData(data) {
@@ -5,10 +14,7 @@ function mergeData(data) {
     let langCode = data.slice(1);
 
     result = {
-        "headers": [
-            "Python",
-            "JavaScript"
-        ],
+        "headers": activeLangs(),
         "rows": {}
     }
     let allKeys = new Set(langCode.map(e => Object.keys(e)).reduce((acc, arr) => [...acc, ...arr], []));
@@ -52,37 +58,58 @@ function displayTableBody(data, included_ids = []) {
     })
     html.push("</tbody>");
     document.querySelector('#main-table').innerHTML = html.join('');
-    return html.join('')
+}
+
+function initLangs(){
+    html = []
+    Object.entries(languages).forEach(entry => {
+        lang = entry[0];
+        isActive = entry[1];
+        html.push(`<div class="lang glass ${isActive? 'active': ''}">${lang}</div>`);
+    })
+    document.querySelector('#lang-selector').innerHTML = html.join('');
+}
+
+function initComparison(){
+    Promise.all([
+            ...[fetch('https://gist.githubusercontent.com/jaimevp54/b85ca213ce484b1dab56708c51a80f73/raw/4a0431405647aecf1fbc0637cb0d9b52b20b8a09/meta.json')],
+            ...activeLangs().map(lang => fetch(`https://gist.githubusercontent.com/jaimevp54/b85ca213ce484b1dab56708c51a80f73/raw/4a0431405647aecf1fbc0637cb0d9b52b20b8a09/${lang}.json`))
+    ])
+        .then(responses => Promise.all(responses.map(response => response.json())))
+        .then(mergeData)
+        .then(displayTableBody)
+        .then(() => {
+            // prepare data so it can be indexed
+            let documents = [];
+            Object.entries(mergedData.rows).forEach(entry => {
+                key = entry[0];
+                value = entry[1];
+                documents.push({
+                    "id": key,
+                    "title": value[0],
+                    "code": value.slice(1).join(" ")
+                })
+            })
+
+            const fuse = new Fuse(documents, {
+                keys: ['title', 'code']
+            })
+            document.querySelector('#search').addEventListener('keyup', (event) => {
+                let searchTerm = event.target.value;
+                matched = fuse.search(searchTerm).map(match => match.item.id);
+                displayTableBody(mergedData, matched);
+            })
+        });
 }
 
 
-Promise.all([
-        fetch('https://gist.githubusercontent.com/jaimevp54/b85ca213ce484b1dab56708c51a80f73/raw/4a0431405647aecf1fbc0637cb0d9b52b20b8a09/meta.json'),
-        fetch('https://gist.githubusercontent.com/jaimevp54/b85ca213ce484b1dab56708c51a80f73/raw/d55ed558f20b9e14e9d20da935cf0027e0b28080/python.json'),
-        fetch('https://gist.githubusercontent.com/jaimevp54/b85ca213ce484b1dab56708c51a80f73/raw/7abef739df786cc914ae20fce5a581a85dd726f6/javascript.json')
-    ])
-    .then(responses => Promise.all(responses.map(response => response.json())))
-    .then(mergeData)
-    .then(displayTableBody)
-    .then(() => {
-        // prepare data so it can be indexed
-        let documents = [];
-        Object.entries(mergedData.rows).forEach(entry => {
-            key = entry[0];
-            value = entry[1];
-            documents.push({
-                "id": key,
-                "title": value[0],
-                "code": value.slice(1).join(" ")
-            })
-        })
+initLangs();
+initComparison();
 
-        const fuse = new Fuse(documents, {
-            keys: ['title', 'code']
-        })
-        document.querySelector('#search').addEventListener('keyup', (event) => {
-            let searchTerm = event.target.value;
-            matched = fuse.search(searchTerm).map(match => match.item.id);
-            displayTableBody(mergedData, matched);
-        })
-    });
+document.querySelectorAll("#lang-selector .lang").forEach(element => {
+    element.addEventListener('click', (e) => {
+        languages[e.target.textContent.toLowerCase()] ^= true; // XOR -> alternate value between true and false
+        e.target.classList.toggle('active');
+        initComparison();
+    })
+})
