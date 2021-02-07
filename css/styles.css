@@ -6,15 +6,30 @@ html {
     min-height: 100vh;
 }
 
+@font-face{
+    font-family: 'JetBrains Mono';
+    src: url('https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/fonts/webfonts/JetBrainsMono-Regular.woff2') format('woff2'),
+         url('https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/fonts/ttf/JetBrainsMono-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*:not(code){
+    font-family: "Roboto";
+}
+h1, code{
+    -webkit-font-feature-settings: "liga" off, "calt" off;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-family: 'JetBrains Mono';
+}
+
 *,
 *:before,
 *:after {
     -webkit-box-sizing: inherit;
     -moz-box-sizing: inherit;
     box-sizing: inherit;
-}
-*:not(code){
-    font-family: "Roboto";
 }
 
 body {
@@ -53,17 +68,20 @@ table.glass code{
     flex-direction: column;
     align-items: center;
     padding: 20px;
+    max-width: calc( 100vw - 40px );
 }
 
 #lang-selector{
     display: flex;
     width: 100%;
     max-width: 800px;
-    justify-content: space-between;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 #lang-selector .lang{
     padding: 5px 20px;
+    margin: 5px;
     min-width: 120px;
     text-align: center;
     cursor: pointer;
@@ -72,14 +90,14 @@ table.glass code{
 }
 
 #lang-selector .lang.active{
-    background: rgba(255,255,255,1);
+    background: rgb(228 99 106);
     font-weight: bold;
+    color: white;
 }
 
 #lang-selector .lang:hover{
     transform: scale(1.1);
     transition: transform 0.2s;
-    background: rgba(255,255,255,0.5);
 }
 
 #search{
@@ -89,11 +107,26 @@ table.glass code{
     max-width: 400px;
     width: 100%;
 }
+.main-table-wrapper{
+    width: 100%;
+    overflow-x: scroll;
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+.main-table-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+  
+/* Hide scrollbar for IE, Edge and Firefox */
+.main-table-wrapper {
+-ms-overflow-style: none;  /* IE and Edge */
+scrollbar-width: none;  /* Firefox */
+}
 
 table{
     width: 100%;
     border-collapse: collapse;
     border-spacing: 0;
+    min-width: 600px;
 }
 
 table tr {
@@ -154,3 +187,4 @@ tr:last-child code {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
+
