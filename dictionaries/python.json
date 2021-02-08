@@ -68,6 +68,14 @@
     "var-0": [
         ["x = 42"]
     ],
+
+    "condition-0": [
+        [
+            "if 42 <= 10:",
+            "    done = True"
+        ]
+    ],
+
     "func-0": [
         [
             "def func(a, b):",
