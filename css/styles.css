@@ -145,8 +145,12 @@ table tbody tr{
     cursor: pointer;
 }
 
+table tbody tr:hover th {
+    font-weight: bold;
+}
 table tbody tr:hover code {
-    background: rgba(255,255,255,0.8);
+    font-weight: bold;
+    background: rgba(255,255,255,1);
 }
   
 table tbody tr > th{
@@ -155,6 +159,7 @@ table tbody tr > th{
     align-items: center;
     display: flex;
     justify-content: flex-end;
+    font-weight: normal;
 }
 
 
@@ -165,7 +170,7 @@ table code {
     background: lightblue;
     margin: 0 10px;
     height: 100%;
-    padding: 5px;
+    padding: 15px !important; /*!important is needed here to overide the padding from highlight.js */ 
     display: flex;
     align-items: center;
 }
