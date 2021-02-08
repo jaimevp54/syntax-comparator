@@ -1,7 +1,55 @@
 {
-    "var-0": {
-        "title": "Variable declaration"
+    "num-0": {
+        "title": "Numeric addition"
     },
+    "num-1": {
+        "title": "Numeric subtraction"
+    },
+    "num-2": {
+        "title": "Numeric multiplication"
+    },
+    "num-3": {
+        "title": "Numeric division"
+    },
+    "num-4": {
+        "title": "Numeric modulo division"
+    },
+    "num-5": {
+        "title": "Numeric exponentiation"
+    },
+    "num-6": {
+        "title": "Integer division"
+    },
+
+    "comp-0": {
+        "title": "Identity equality comparison"
+    },
+    "comp-1": {
+        "title": "Value equality comparison"
+    },
+    "comp-2": {
+        "title": "Less/Greater than comparison"
+    },
+    "comp-3": {
+        "title": "Less/Greater or equal than comparison"
+    },
+
+    "bool-0": {
+        "title": "Boolean values"
+    },
+    "bool-1": {
+        "title": "Logical NOT"
+    },
+    "bool-2": {
+        "title": "Logical AND"
+    },
+    "bool-3": {
+        "title": "Logical OR"
+    },
+    "bool-4": {
+        "title": "Logical XOR"
+    },
+
     "func-0": {
         "title": "Function definition"
     },
