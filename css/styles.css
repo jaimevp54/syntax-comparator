@@ -54,7 +54,6 @@ table.glass code{
 
 .content {
     display: grid;
-    grid-template-rows: 2fr 8fr;
     grid-gap: 20px;
 
     width: 100%;
