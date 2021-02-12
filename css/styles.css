@@ -144,6 +144,10 @@ table tbody tr{
     cursor: pointer;
 }
 
+table tbody tr th{
+    text-align: right;
+}
+
 table tbody tr:hover th {
     font-weight: bold;
 }
