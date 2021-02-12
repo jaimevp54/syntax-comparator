@@ -1,79 +1,103 @@
 {
-    "num-0": [
+    "num-000": [
         ["1 + 1"]
     ],
-    "num-1": [
+    "num-100": [
         ["1 - 1"]
     ],
-    "num-2": [
+    "num-200": [
         ["2 * 2"]
     ],
-    "num-3": [
+    "num-300": [
         ["2 / 2"]
     ],
-    "num-4": [
+    "num-400": [
         ["10 % 7"]
     ],
-    "num-5": [
+    "num-500": [
         ["2**3"]
     ],
-    "num-6": [
+    "num-600": [
         ["Math.floor(5 / 2)"]
     ],
 
-    "comp-0": [
+    "comp-000": [
         [
             "a === b",
             "a !== b"
         ]
     ],
-    "comp-1": [
+    "comp-100": [
         [
             "a == b",
             "a != b"
         ]
     ],
-    "comp-2": [
+    "comp-200": [
         [
             "a > b",
             "a < b"
         ]
     ],
-    "comp-3": [
+    "comp-300": [
         [
             "a >= b",
             "a <= b"
         ]
     ],
 
-    "bool-0": [
+    "bool-000": [
         [
             "true",
             "false"
         ]
     ],
-    "bool-1": [
+    "bool-100": [
         ["!true"]
     ],
-    "bool-2": [
+    "bool-200": [
         ["True && False"]
     ],
-    "bool-3": [
+    "bool-300": [
         ["True || False"]
     ],
-    "bool-4": [],
+    "bool-400": [],
 
-    "var-0": [
+    "str-000": [
+        [ "\"Hello World\""]
+    ],
+    "str-100": [
+        [
+            "\"Hello\" +",
+            "\"World\""
+        ]
+    ],
+    "str-200": [
+        [
+            "`",
+            "Hello",
+            "World",
+            "`"
+        ]
+    ],
+    "str-300": [
+        ["\"Hello\" + \"World\""]
+    ],
+    "str-400": [
+        ["`2 + 2 = ${2 + 2}`"]
+    ],
+
+    "var-000": [
         ["var x=42"],
         ["let x=42"]
     ],
-    "func-0": [
+    "func-000": [
         [
             "function func(a, b):",
             "    return a + b"
         ]
     ],
-   "func-1": [
+   "func-100": [
         ["func = (a, b) => a + b"]
     ]
 }

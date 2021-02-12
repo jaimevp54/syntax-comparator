@@ -1,65 +1,81 @@
 {
-    "num-0": {
+    "num-000": {
         "title": "Numeric addition"
     },
-    "num-1": {
+    "num-100": {
         "title": "Numeric subtraction"
     },
-    "num-2": {
+    "num-200": {
         "title": "Numeric multiplication"
     },
-    "num-3": {
+    "num-300": {
         "title": "Numeric division"
     },
-    "num-4": {
+    "num-400": {
         "title": "Numeric modulo division"
     },
-    "num-5": {
+    "num-500": {
         "title": "Numeric exponentiation"
     },
-    "num-6": {
+    "num-600": {
         "title": "Integer division"
     },
 
-    "comp-0": {
+    "comp-000": {
         "title": "Identity equality comparison"
     },
-    "comp-1": {
+    "comp-100": {
         "title": "Value equality comparison"
     },
-    "comp-2": {
+    "comp-200": {
         "title": "Less/Greater than comparison"
     },
-    "comp-3": {
+    "comp-300": {
         "title": "Less/Greater or equal than comparison"
     },
 
-    "bool-0": {
+    "bool-000": {
         "title": "Boolean values"
     },
-    "bool-1": {
+    "bool-100": {
         "title": "Logical NOT"
     },
-    "bool-2": {
+    "bool-200": {
         "title": "Logical AND"
     },
-    "bool-3": {
+    "bool-300": {
         "title": "Logical OR"
     },
-    "bool-4": {
+    "bool-400": {
         "title": "Logical XOR"
     },
 
-    "func-0": {
+    "str-000": {
+        "title": "String Declaration"
+    },
+    "str-100": {
+        "title": "Multiline string without new lines"
+    },
+    "str-200": {
+        "title": "Multiline string with new lines"
+    },
+    "str-300": {
+        "title": "String concatenation"
+    },
+    "str-400": {
+        "title": "String interpolation"
+    },
+
+    "func-000": {
         "title": "Function definition"
     },
-    "func-1": {
+    "func-100": {
         "title": "Anonymous function"
     },
-    "func-2": {
+    "func-200": {
         "title": "CC"
     },
-    "comprehension-list-0": {
+    "comprehension-list-000": {
         "title": "List comprehension"
     }
 }
