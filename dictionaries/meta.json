@@ -51,7 +51,7 @@
     },
 
     "str-000": {
-        "title": "String Declaration"
+        "title": "String"
     },
     "str-100": {
         "title": "Multiline string without new lines"
@@ -64,6 +64,43 @@
     },
     "str-400": {
         "title": "String interpolation"
+    },
+
+    "arr-000": {
+        "title": "Single type Array/List"
+    },
+    "arr-001": {
+        "title": "Multiple type Array/List"
+    },
+    "arr-100": {
+        "title": "Push value into Array/List (at the end)"
+    },
+    "arr-200": {
+        "title": "Pop value from Array/List (from the end)"
+    },
+    "arr-300": {
+        "title": "Array/List access element by index"
+    },
+    "arr-400": {
+        "title": "Array/List inverse access by index"
+    },
+    "arr-500": {
+        "title": "Array/List insert item at index"
+    },
+    "arr-600": {
+        "title": "Array/List delete item at index"
+    },
+    "arr-700": {
+        "title": "Array/List slicing"
+    },
+    "arr-800": {
+        "title": "Array/List concatenation"
+    },
+    "arr-900": {
+        "title": "Array/List existence check"
+    },
+    "arr-901": {
+        "title": "Array/List length"
     },
 
     "func-000": {
