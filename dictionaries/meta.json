@@ -148,6 +148,20 @@
         "title": "Map/Dict declare default value"
     },
 
+
+    "cond-000": {
+        "title": "if/else statement"
+    },
+    "cond-100": {
+        "title": "Single line (ternary) conditional statement"
+    },
+    "cond-200": {
+        "title": "try/catch statement"
+    },
+    "cond-300": {
+        "title": "switch/case statement"
+    },
+
     "func-000": {
         "title": "Function definition"
     },

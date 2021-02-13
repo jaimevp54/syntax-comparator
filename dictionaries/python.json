@@ -171,10 +171,28 @@
         ["defaultdict(lamda: \"default value\")"]
     ],
 
-    "condition-000": [
+    "cond-000": [
         [
             "if 42 <= 10:",
-            "    done = True"
+            "    #do stuff",
+            "elif 42 > 10:",
+            "    #do stuff",
+            "else:",
+            "    #do stuff"
+        ]
+    ],
+    "cond-100": [
+        [
+            "\":D\" if answer == 42 else \":(\""
+        ]
+    ],
+    "cond-200": [
+        [
+            "try:",
+            "    #do stuff",
+            "    raise Exception",
+            "except Exception as error:",
+            "    #error handling"
         ]
     ],
 
