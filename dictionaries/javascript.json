@@ -1,4 +1,11 @@
 {
+    "io-000": [
+        ["console.log(\"Hello World\")"]
+    ],
+    "io-100": [
+        ["prompt(\"What is your name?\")"]
+    ],
+
     "num-000": [
         ["1 + 1"]
     ],

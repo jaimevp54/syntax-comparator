@@ -1,4 +1,11 @@
 {
+    "io-000": {
+        "title": "Write to console"
+    },
+    "io-100": {
+        "title": "Read from console"
+    },
+
     "num-000": {
         "title": "Numeric addition"
     },

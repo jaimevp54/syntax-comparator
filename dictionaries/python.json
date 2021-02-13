@@ -1,4 +1,11 @@
 {
+    "io-000": [
+        ["print(\"Hello World\")"]
+    ],
+    "io-100": [
+        ["input(\"What is your name?\")"]
+    ],
+
     "num-000": [
         ["1 + 1"]
     ],
