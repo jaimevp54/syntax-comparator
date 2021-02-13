@@ -64,10 +64,9 @@ function displayTableBody(data, included_ids = []) {
     });
     html.push("</thead>");
     html.push("<tbody>");
-    Object.keys(data.rows).forEach(key => {
-        if (included_ids.length && !included_ids.includes(key)) {
-            return; //continue
-        }
+    
+    let keys = included_ids.length ? included_ids : Object.keys(data.rows);
+    keys.forEach(key => {
         html.push(`<tr id=${key}>`);
         html.push(`<th>${data.rows[key][0]}</th>`);
         data.rows[key].slice(1).forEach((codeText, index) => {
@@ -90,6 +89,28 @@ function initLangs(){
     })
     document.querySelector('#lang-selector').innerHTML = html.join('');
 }
+function initSearch(){
+    // prepare data so it can be indexed
+    let documents = [];
+    Object.entries(mergedData.rows).forEach(entry => {
+        key = entry[0];
+        value = entry[1];
+        documents.push({
+            "id": key,
+            "title": value[0],
+            "code": value.slice(1).join(" ")
+        })
+    })
+
+    const fuse = new Fuse(documents, {
+        keys: ['title', 'code']
+    })
+    document.querySelector('#search').addEventListener('keyup', (event) => {
+        let searchTerm = event.target.value;
+        matched = fuse.search(searchTerm).map(match => match.item.id);
+        displayTableBody(mergedData, matched);
+    })
+}
 
 function initComparison(){
     Promise.all([
@@ -99,28 +120,7 @@ function initComparison(){
         .then(responses => Promise.all(responses.map(response => response.json())))
         .then(mergeData)
         .then(displayTableBody)
-        .then(() => {
-            // prepare data so it can be indexed
-            let documents = [];
-            Object.entries(mergedData.rows).forEach(entry => {
-                key = entry[0];
-                value = entry[1];
-                documents.push({
-                    "id": key,
-                    "title": value[0],
-                    "code": value.slice(1).join(" ")
-                })
-            })
-
-            const fuse = new Fuse(documents, {
-                keys: ['title', 'code']
-            })
-            document.querySelector('#search').addEventListener('keyup', (event) => {
-                let searchTerm = event.target.value;
-                matched = fuse.search(searchTerm).map(match => match.item.id);
-                displayTableBody(mergedData, matched);
-            })
-        });
+        .then(initSearch);
 }
 
 
