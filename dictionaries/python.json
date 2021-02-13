@@ -6,6 +6,13 @@
         ["input(\"What is your name?\")"]
     ],
 
+    "var-100": [
+        ["x = 42"]
+    ],
+    "var-300": [
+        ["a, b, c = [1, 2, 3]"]
+    ],
+
     "num-000": [
         ["1 + 1"]
     ],
@@ -162,10 +169,6 @@
     ],
     "dict-700": [
         ["defaultdict(lamda: \"default value\")"]
-    ],
-
-    "var-000": [
-        ["x = 42"]
     ],
 
     "condition-000": [

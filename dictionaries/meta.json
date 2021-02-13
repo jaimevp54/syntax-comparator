@@ -6,6 +6,19 @@
         "title": "Read from console"
     },
 
+    "var-000": {
+        "title": "Variable declaration"
+    },
+    "var-100": {
+        "title": "Variable initialization"
+    },
+    "var-200": {
+        "title": "Constant variable"
+    },
+    "var-300": {
+        "title": "Variable unpacking/destructuring"
+    },
+
     "num-000": {
         "title": "Numeric addition"
     },
