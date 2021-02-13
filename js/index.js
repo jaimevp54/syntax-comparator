@@ -39,8 +39,8 @@ function mergeData(data) {
     }
     let allKeys = new Set(langCode.map(e => Object.keys(e)).reduce((acc, arr) => [...acc, ...arr], []));
 
-    allKeys.forEach(key => {
-        if (key in meta){
+    Object.keys(meta).forEach(key => {
+        if (allKeys.has(key)){
             result.rows[key] = [meta[key].title]
             langCode.forEach(e => {
                 try {
