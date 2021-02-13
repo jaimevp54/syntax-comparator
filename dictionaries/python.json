@@ -132,6 +132,31 @@
         ["len(arr)"]
     ],
 
+    "dict-000": [
+        ["{\"answer\": 42}" ]
+    ],
+    "dict-100": [
+        ["d[\"key\"] = 42" ]
+    ],
+    "dict-200": [
+        ["d[\"key\"]" ]
+    ],
+    "dict-300": [
+        ["d.keys()"]
+    ],
+    "dict-400": [
+        ["d.values()"]
+    ],
+    "dict-500": [
+        ["del d[\"key\"]"]
+    ],
+    "dict-600": [
+        ["\"key\" in d"]
+    ],
+    "dict-700": [
+        ["defaultdict(lamda: \"default value\")"]
+    ],
+
     "var-000": [
         ["x = 42"]
     ],

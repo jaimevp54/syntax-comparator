@@ -103,6 +103,31 @@
         "title": "Array/List length"
     },
 
+    "dict-000": {
+        "title": "Map/Dict"
+    },
+    "dict-100": {
+        "title": "Map/Dict key value assignment"
+    },
+    "dict-200": {
+        "title": "Map/Dict access value by key"
+    },
+    "dict-300": {
+        "title": "Get all keys from a Map/Dict"
+    },
+    "dict-400": {
+        "title": "Get all values from a Map/Dict"
+    },
+    "dict-500": {
+        "title": "Delete key from Map/Dict"
+    },
+    "dict-600": {
+        "title": "Map/Dict check if key has value"
+    },
+    "dict-700": {
+        "title": "Map/Dict declare default value"
+    },
+
     "func-000": {
         "title": "Function definition"
     },

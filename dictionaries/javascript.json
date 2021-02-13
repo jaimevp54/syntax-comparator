@@ -126,6 +126,28 @@
         ["arr.length"]
     ],
 
+    "dict-000": [
+        ["{\"answer\": 42}" ]
+    ],
+    "dict-100": [
+        ["d[\"key\"] = 42" ]
+    ],
+    "dict-200": [
+        ["d[\"key\"]" ]
+    ],
+    "dict-300": [
+        ["Object.keys(d)"]
+    ],
+    "dict-400": [
+        ["Object.values(d)"]
+    ],
+    "dict-500": [
+        ["delete d[\"key\"]"]
+    ],
+    "dict-600": [
+        ["\"key\" in d"]
+    ],
+
     "var-000": [
         ["var x=42"],
         ["let x=42"]
