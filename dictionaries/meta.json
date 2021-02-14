@@ -188,14 +188,30 @@
     },
 
     "func-000": {
-        "title": "Function definition"
+        "title": "Function prototype"
     },
     "func-100": {
-        "title": "Anonymous function"
+        "title": "Function definition"
     },
     "func-200": {
-        "title": "CC"
+        "title": "Calling a function"
     },
+    "func-300": {
+        "title": "Functions with optional arguments"
+    },
+    "func-400": {
+        "title": "Functions with variable arguments"
+    },
+    "func-500": {
+        "title": "Returning multiple values"
+    },
+    "func-600": {
+        "title": "Anonymous functions"
+    },
+    "func-700": {
+        "title": "Nested functions definition"
+    },
+
     "comprehension-list-000": {
         "title": "List comprehension"
     }

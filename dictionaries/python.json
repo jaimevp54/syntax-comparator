@@ -222,19 +222,58 @@
         ["functools.reduce(func, [1, 2, 3], initial_value)"]
     ],
 
-    "func-000": [
+    "func-100": [
         [
             "def func(a, b):",
             "    return a + b"
-        ],
-        [
-            "def hola(a, b):",
-            "    return a**b"
         ]
     ],
-    "func-100": [
-        ["lambda a, b: a + b"]
+    "func-200": [
+        [
+            "func(40, 2)"
+        ]
     ],
+    "func-300": [
+        [
+            "def func(a, b, optional=0):",
+            "   return a + b + optional"
+        ]
+    ],
+    "func-400": [
+        [
+            "def func(*args, **kwargs):",
+            "   print(args)",
+            "   print(kwargs)",
+            "",
+            "func(1, 2, a=3, b=4)",
+            "# output",
+            "# -> [1, 2]",
+            "# -> {'a': 3, 'b':4}"
+        ]
+    ],
+    "func-500": [
+        [
+            "def func(a, b):",
+            "   return a*2, b*2 ",
+            "",
+            "a2, b2 = func(1, 2)"
+        ]
+    ],
+    "func-600": [
+        [
+            "lambda a, b: a + b"
+        ]
+    ],
+    "func-700": [
+        [
+            "def func_a():",
+            "   def func_b():",
+            "       print(\"Hello\")",
+            "   func_b()",
+            "   print(\"World\")"
+        ]
+    ],
+
     "comprehension-list-000": [
         ["[letter for letter in \"Hello World\"]"]
     ]

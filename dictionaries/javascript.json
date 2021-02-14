@@ -250,14 +250,57 @@
         ]
     ],
 
-
-    "func-000": [
+    "func-100": [
         [
-            "function func(a, b):",
-            "    return a + b"
+            "function func(a, b){",
+            "    return a + b",
+            "}"
         ]
     ],
-   "func-100": [
-        ["func = (a, b) => a + b"]
+    "func-200": [
+        [
+            "func(40, 2)"
+        ]
+    ],
+    "func-300": [
+        [
+            "function func(a, b, optional=0){",
+            "   return a + b + optional",
+            "}"
+        ]
+    ],
+    "func-400": [
+        [
+            "func func(...args){",
+            "   console.log(args)",
+            "}",
+            "func(1, 2, a=3, b=4)",
+            "// output",
+            "// -> [1, 2, 3, 4]"
+        ]
+    ],
+    "func-500": [
+        [
+            "function func(a, b){",
+            "   return [a*2, b*2] ",
+            "}",
+            "[a2, b2] = func(1, 2)"
+        ]
+    ],
+    "func-600": [
+        [
+            "(a, b) => a + b"
+        ]
+    ],
+    "func-700": [
+        [
+            "func func_a(){",
+            "   func func_b(){",
+            "       console.log(\"Hello\")",
+            "   }",
+            "   func_b()",
+            "   console.log(\"World\")",
+            "}"
+        ]
     ]
 }
