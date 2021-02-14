@@ -168,7 +168,7 @@
         ["\"key\" in d"]
     ],
     "dict-700": [
-        ["defaultdict(lamda: \"default value\")"]
+        ["collections.defaultdict(lamda: \"default value\")"]
     ],
 
     "cond-000": [
@@ -182,9 +182,7 @@
         ]
     ],
     "cond-100": [
-        [
-            "\":D\" if answer == 42 else \":(\""
-        ]
+        [ "\":D\" if answer == 42 else \":(\"" ]
     ],
     "cond-200": [
         [
@@ -194,6 +192,34 @@
             "except Exception as error:",
             "    #error handling"
         ]
+    ],
+
+    "loop-000": [
+        [
+            "for i in range(10):",
+            "    # do stuff "
+        ]
+    ],
+    "loop-100": [
+        [
+            "for fruit in [\"Mango\", \"Pear\"]:",
+            "    # do stuff "
+        ]
+    ],
+    "loop-200": [
+        [
+            "while i < 10:",
+            "    # do stuff"
+        ]
+    ],
+    "loop-500": [
+        ["map(func, [1, 2, 3])"]
+    ],
+    "loop-600": [
+        ["filter(func, [1, 2, 3])"]
+    ],
+    "loop-700": [
+        ["functools.reduce(func, [1, 2, 3], initial_value)"]
     ],
 
     "func-000": [

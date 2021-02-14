@@ -162,6 +162,31 @@
         "title": "switch/case statement"
     },
 
+    "loop-000": {
+        "title": "Counter for statement"
+    },
+    "loop-100": {
+        "title": "For-each statement"
+    },
+    "loop-200": {
+        "title": "While statement"
+    },
+    "loop-300": {
+        "title": "Do-while statement"
+    },
+    "loop-400": {
+        "title": "For-each function"
+    },
+    "loop-500": {
+        "title": "Map function"
+    },
+    "loop-600": {
+        "title": "Filter function"
+    },
+    "loop-700": {
+        "title": "Reduce function"
+    },
+
     "func-000": {
         "title": "Function definition"
     },

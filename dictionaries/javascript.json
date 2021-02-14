@@ -207,6 +207,50 @@
         ]
     ],
 
+    "loop-000": [
+        [
+            "for (let i=0; i<10; i++){",
+            "  // do stuff ",
+            "}"
+        ]
+    ],
+    "loop-100": [
+        [
+            "for (let fruit of [\"Mango\", \"Pear\"]){",
+            "  // do stuff ",
+            "}"
+        ]
+    ],
+    "loop-200": [
+        [
+            "while (i < 10){",
+            "  // do stuff ",
+            "}"
+        ]
+    ],
+    "loop-300": [
+        [
+            "do {",
+            "  // do stuff ",
+            "} while (i < 10)"
+        ]
+    ],
+    "loop-400": [
+        ["[1, 2, 3].forEach(func)"]
+    ],
+    "loop-500": [
+        ["[1, 2, 3].map(func)"]
+    ],
+    "loop-600": [
+        ["[1, 2, 3].filter(func)"]
+    ],
+    "loop-700": [
+        [
+            "[1, 2, 3].reduce(func, initial_value)"
+        ]
+    ],
+
+
     "func-000": [
         [
             "function func(a, b):",
