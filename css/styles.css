@@ -100,7 +100,7 @@ table.glass code{
 }
 
 #search{
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     padding: 5px;
     border: none;
     max-width: 400px;
@@ -129,7 +129,6 @@ table{
 }
 
 table tr {
-    cursor: pointer;
     display: grid;
     grid-template-columns: 170px repeat(auto-fit, minmax(0, 1fr) );
 }
@@ -139,10 +138,6 @@ table thead th {
     text-transform: capitalize;
 }
 
-
-table tbody tr{
-    cursor: pointer;
-}
 
 table tbody tr th{
     text-align: right;
@@ -180,6 +175,7 @@ table code {
 
 td {
     padding: 0px;
+    position: relative;
 }
 
 tr:not(:first-child) code{
@@ -194,5 +190,34 @@ tr:first-child code {
 tr:last-child code {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+}
+
+/* copy to clibpoard */
+.copy-to-clipboard{
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    font-size: 16px;
+ 
+    cursor: pointer;
+    background: none;
+    border: none;
+
+    opacity: 0.1;
+}
+tr:hover .copy-to-clipboard{
+    opacity: 0.5;
+}
+td:hover .copy-to-clipboard:hover,
+.copy-to-clipboard:focus{
+    opacity: 1;
+}
+
+.copy-to-clipboard:focus:before,
+.copy-to-clipboard:hover:before{
+    content: 'Copy'; 
+    font-style: italic;
+    margin-right: 5px;
+    color: gray;
 }
 

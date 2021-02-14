@@ -70,7 +70,9 @@ function displayTableBody(data, included_ids = []) {
         html.push(`<tr id=${key}>`);
         html.push(`<th>${data.rows[key][0]}</th>`);
         data.rows[key].slice(1).forEach((codeText, index) => {
-            html.push(`<td><code class="${activeLangs()[index]}">${htmlEntityEncode(codeText.join("\n"))}</td></code>`);
+            html.push(`<td>
+                <code class="${activeLangs()[index]}">${htmlEntityEncode(codeText.join("\n"))}</code>
+                </td>`);
         })
         html.push(`</tr>`);
     })
@@ -109,6 +111,7 @@ function initSearch(){
         let searchTerm = event.target.value;
         matched = fuse.search(searchTerm).map(match => match.item.id);
         displayTableBody(mergedData, matched);
+        initCopyFromClipboard();
     })
 }
 
@@ -120,9 +123,23 @@ function initComparison(){
         .then(responses => Promise.all(responses.map(response => response.json())))
         .then(mergeData)
         .then(displayTableBody)
-        .then(initSearch);
+        .then(initSearch)
+        .then(initCopyFromClipboard);
 }
 
+function initCopyFromClipboard(){
+    if (!ClipboardJS.isSupported()) return
+    document.querySelectorAll('table tbody td').forEach((element) => {
+        let buttonHTML = `<button class="copy-to-clipboard" data-clipboard-target="code"><i class="far fa-clipboard"></i></button>`;
+        element.innerHTML += buttonHTML;
+    })
+    
+    c = new ClipboardJS('.copy-to-clipboard', {
+        target: function(triggerElement) {
+            return triggerElement.closest('td').querySelector('code');
+        }
+    });
+}
 
 initLangs();
 initComparison();
