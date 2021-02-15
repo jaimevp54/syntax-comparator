@@ -212,6 +212,55 @@
         "title": "Nested functions definition"
     },
 
+    "class-000": {
+        "title": "Class prototype"
+    },
+    "class-010": {
+        "title": "Class definition"
+    },
+    "class-020": {
+        "title": "Class constructor"
+    },
+    "class-100": {
+        "title": "Class instantiation"
+    },
+    "class-200": {
+        "title": "Instance method definition"
+    },
+    "class-210": {
+        "title": "Class method definition"
+    },
+    "class-220": {
+        "title": "Static method definition"
+    },
+    "class-300": {
+        "title": "Calling a method"
+    },
+    "class-310": {
+        "title": "Calling a static method"
+    },
+    "class-400": {
+        "title": "Public access member"
+    },
+    "class-410": {
+        "title": "Private access member"
+    },
+    "class-420": {
+        "title": "Protected access member"
+    },
+    "class-500": {
+        "title": "Class getter method"
+    },
+    "class-510": {
+        "title": "Class setter method"
+    },
+    "class-600": {
+        "title": "Class inheritance"
+    },
+    "class-610": {
+        "title": "Multiple class inheritance"
+    },
+
     "comprehension-list-000": {
         "title": "List comprehension"
     }

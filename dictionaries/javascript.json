@@ -282,7 +282,7 @@
     "func-500": [
         [
             "function func(a, b){",
-            "   return [a*2, b*2] ",
+            "  return [a*2, b*2] ",
             "}",
             "[a2, b2] = func(1, 2)"
         ]
@@ -295,11 +295,113 @@
     "func-700": [
         [
             "func func_a(){",
-            "   func func_b(){",
-            "       console.log(\"Hello\")",
-            "   }",
-            "   func_b()",
-            "   console.log(\"World\")",
+            "  func func_b(){",
+            "      console.log(\"Hello\")",
+            "  }",
+            "  func_b()",
+            "  console.log(\"World\")",
+            "}"
+        ]
+    ],
+
+    "class-010": [
+        ["class Person{}"]
+    ],
+    "class-020": [
+        [
+            "class Person{",
+            "  constructor(name){",
+            "    this.name = name",
+            "}"
+        ]
+    ],
+    "class-100": [
+        ["new Person(\"John\")"]
+    ],
+    "class-200": [
+        [
+            "class Person{",
+            "  constructor(name){",
+            "    this.name = name",
+            "  }",
+            "  talk(){",
+            "    console.log(\"My name is\"+ this.name)",
+            "  }",
+            "}"
+        ]
+    ],
+    "class-220": [
+        [
+            "class Person{",
+            "  static talk(){",
+            "    console.log(\"Hello World\")",
+            "  }",
+            "}"
+        ]
+    ],
+    "class-300": [
+        [
+            "p = new Person()",
+            "p.talk()"
+        ]
+    ],
+    "class-310": [
+        [
+            "Person.talk()"
+        ]
+    ],
+    "class-400": [
+        [
+            "class Person{",
+            "   let name = \"John\"",
+            "}"
+        ]
+    ],
+    "class-410": [
+        [
+            "class Person{",
+            "  #median_age = 30",
+            "  constructor(name){",
+            "    this.#name = name",
+            "}"
+        ]
+    ],
+    "class-500": [
+        [
+            "class Person{",
+            "  constructor(name){",
+            "    this.name = name",
+            "  }",
+            "  get name(){",
+            "     return this.name",
+            "  }",
+            "}"
+        ]
+    ],
+    "class-510": [
+        [
+            "class Person{",
+            "  constructor(name){",
+            "    this.name = name",
+            "  }",
+            "  set name(value){",
+            "     this.name = value",
+            "  }",
+            "}"
+        ]
+    ],
+    "class-600": [
+        [
+            "class Person{",
+            "  constructor(name){",
+            "    this.name = name",
+            "  }",
+            "}",
+            "class Pilot extends Person:",
+            "  constructor(name, airline) {",
+            "    super(name);",
+            "    this.airline = airline;",
+            "  }",
             "}"
         ]
     ]

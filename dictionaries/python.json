@@ -274,6 +274,115 @@
         ]
     ],
 
+    "class-010": [
+        [
+            "class Person:",
+            "   pass"
+        ]
+    ],
+    "class-020": [
+        [
+            "class Person:",
+            "   def __init__(name):",
+            "       self.name = name"
+        ]
+    ],
+    "class-100": [
+        ["Person(\"John\")"]
+    ],
+    "class-200": [
+        [
+            "class Person:",
+            "   def __init__(name):",
+            "       self.name = name",
+            "",
+            "   def talk(self):",
+            "       print(\"My name is\"+ self.name)"
+        ]
+    ],
+    "class-210": [
+        [
+            "class Person:",
+            "   median_age = 30",
+            "",
+            "   @classmethod",
+            "   def talk(cls):",
+            "       print(\"Median age:\" + cls.median_age)"
+        ]
+    ],
+    "class-220": [
+        [
+            "class Person:",
+            "",
+            "   @staticmethod",
+            "   def talk():",
+            "       print(\"Hello World\")"
+        ]
+    ],
+    "class-300": [
+        [
+            "p = Person()",
+            "p.talk()"
+        ]
+    ],
+    "class-310": [
+        [
+            "Person.talk()"
+        ]
+    ],
+    "class-400": [
+        [
+            "class Person:",
+            "   name = \"John\""
+        ]
+    ],
+    "class-500": [
+        [
+            "class Person:",
+            "   def __init__(name):",
+            "       self._name = name",
+            "",
+            "   @property",
+            "   def name(self):",
+            "       return self._name"
+        ]
+    ],
+    "class-510": [
+        [
+            "class Person:",
+            "   def __init__(name):",
+            "       self._name = name",
+            "",
+            "   @name.setter",
+            "   def name(self, value):",
+            "       self._name = value"
+        ]
+    ],
+    "class-600": [
+        [
+            "class Person:",
+            "   def __init__(name):",
+            "       self.name = name",
+            "",
+            "class Pilot(Person):",
+            "   def __init__(name, airline):",
+            "       super().__init__(name)",
+            "       self.airline = airline"
+        ]
+    ],
+    "class-610": [
+        [
+            "class Person:",
+            "   pass",
+            "",
+            "class Worker:",
+            "   pass",
+            "",
+            "class Pilot(Person, Worker):",
+            "   pass"
+        ]
+    ],
+
     "comprehension-list-000": [
         ["[letter for letter in \"Hello World\"]"]
     ]
