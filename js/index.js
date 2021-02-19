@@ -10,16 +10,16 @@ let languages = [
         displayName: "JavaScript",
         isActive: true
     },
-    {
-        name: "csharp",
-        displayName: "C#",
-        isActive: false
-    },
-    {
-        name: "ruby",
-        displayName: "Ruby",
-        isActive: false
-    }
+    // {
+    //     name: "csharp",
+    //     displayName: "C#",
+    //     isActive: false
+    // },
+    // {
+    //     name: "ruby",
+    //     displayName: "Ruby",
+    //     isActive: false
+    // }
 ]
 let activeLangs = () => languages.filter(lang => lang.isActive).map(lang => lang.name)
 let activeLangDisplayNames = () => languages.filter(lang => lang.isActive).map(lang => lang.displayName)
