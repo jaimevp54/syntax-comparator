@@ -87,10 +87,13 @@
     },
 
     "arr-000": {
+        "title": "Primitive Array definition"
+    },
+    "arr-010": {
         "title": "Single type Array/List"
     },
-    "arr-001": {
-        "title": "Multiple type Array/List"
+    "arr-020": {
+        "title": "Multiple types Array/List"
     },
     "arr-100": {
         "title": "Push value into Array/List (at the end)"
