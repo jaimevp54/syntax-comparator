@@ -1,16 +1,136 @@
 {
-    "var-0": [
-        ["int x = 42"]
+    "io-000": [
+        ["Console.WriteLine(\"Hello World\")"]
     ],
-    "func-0": [
+    "io-100": [
+        ["Console.ReadLine()"]
+    ],
+
+    "var-000": [
+        ["int x"],
+        ["var x"]
+    ],
+    "var-100": [
+        ["int x = 42"],
+        ["var x = 42"]
+    ],
+    "var-200": [
+        ["const x = 42"]
+    ],
+    "var-300": [
+        ["(int a, string b, bool c) = (1, \"Two\", true)"],
+        ["var (a, b, c) = (1, \"Two\", true)"]
+    ],
+
+    "num-000": [
+        ["1 + 1"]
+    ],
+    "num-100": [
+        ["1 - 1"]
+    ],
+    "num-200": [
+        ["2 * 2"]
+    ],
+    "num-300": [
+        ["2 / 2"]
+    ],
+    "num-400": [
+        ["10 % 7"]
+    ],
+    "num-500": [
+        ["Math.Pow(2, 3)"]
+    ],
+
+    "comp-000": [
         [
-            "int func(int a, int b){",
-            "    return a + b",
-            "}"
+            "a == b",
+            "a != b"
         ]
     ],
-   "func-1": [
-        ["Func<int, int> func = (a, b) => a + b"]
+    "comp-100": [
+        [
+            "a.equals(b)",
+            "!a.equals(b)"
+        ]
+    ],
+    "comp-200": [
+        [
+            "a > b",
+            "a < b"
+        ]
+    ],
+    "comp-300": [
+        [
+            "a >= b",
+            "a <= b"
+        ]
+    ],
 
+    "bool-000": [
+        [
+            "true",
+            "false"
+        ]
+    ],
+    "bool-100": [
+        ["!true"]
+    ],
+    "bool-200": [
+        ["true && false"]
+    ],
+    "bool-300": [
+        ["true || false"]
+    ],
+    "bool-400": [
+        ["true ^ false"]
+    ],
+
+    "str-000": [
+        [ "\"Hello World\""]
+    ],
+    "str-100": [
+        [
+            "\"Hello\" +",
+            "\"World\""
+        ]
+    ],
+    "str-200": [
+        [
+            "@",
+            "Hello",
+            "World",
+            "\""
+        ]
+    ],
+    "str-300": [
+        ["\"Hello\" + \"World\""]
+    ],
+    "str-400": [
+        ["$\"2 + 2 = {2 + 2}\""]
+    ],
+
+    "arr-010": [
+        ["new List<int>{1,2,3}" ]
+    ],
+    "arr-020": [
+        ["new List<object>{true, 42, \"Hello\"}" ]
+    ],
+    "arr-100": [
+        ["arr.Add(42)"]
+    ],
+    "arr-200": [
+        ["arr.RemoveAt(arr.Count - 1)"]
+    ],
+    "arr-300": [
+        ["arr[0]"]
+    ],
+    "arr-400": [
+        ["arr[arr.Count - 1]"]
+    ],
+    "arr-500": [
+        ["arr.Insert(1, \"Item\")"]
+    ],
+    "arr-600": [
+        ["arr.RemoveAt(1)"]
     ]
 }
